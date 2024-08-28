@@ -1,0 +1,231 @@
+first test case:- 401  unauthorized
+
+var form = new FormData();
+form.append("firstName", "Harshay");
+form.append("LastName", "Chandrakar");
+form.append("phoneNumber", "8234093200");
+form.append("emailId", "harshaychandrakar@gmail.com");
+
+var settings = {
+  "url": "https://bfhldevapigw.healthrx.co.in/automation-campus/create/user",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "roll-number": "",
+    "Content-Type": "application/json"
+  },
+  "processData": false,
+  "mimeType": "multipart/form-data",
+  "contentType": false,
+  "data": form
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+
+Second test Case:-200 ok status
+
+var settings = {
+  "url": "https://bfhldevapigw.healthrx.co.in/automation-campus/create/user",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "roll-number": "240345920007",
+    "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({
+    "firstName": "Akshat",
+    "lastName": "Jain",
+    "phoneNumber": 7896544106,
+    "emailId": "akshatjain@gmail.com"
+  }),
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+Third test Case :- 400  bad request
+
+var settings = {
+  "url": "https://bfhldevapigw.healthrx.co.in/automation-campus/create/user",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "roll-number": "240345920064",
+    "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({
+    "firstName": "Pratik",
+    "lastName": "Dhakole",
+    "phoneNumber": 7896544106,
+    "emailId": "PratikDhakole@gmail.com"
+  }),
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+Forth test case:- 200 ok Status
+
+var settings = {
+  "url": "https://bfhldevapigw.healthrx.co.in/automation-campus/create/user",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "roll-number": "240345920018",
+    "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({
+    "firstName": "Atharva",
+    "lastName": "Gaothure",
+    "phoneNumber": 7896544286,
+    "emailId": "PratikDhakole@gmail.com"
+  }),
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+
+Fifth test case:-  400 bad request 
+
+var settings = {
+  "url": "https://bfhldevapigw.healthrx.co.in/automation-campus/create/user",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "roll-number": "240345920031",
+    "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({
+    "firstName": "Atharva",
+    "lastName": "Gaothure",
+    "phoneNumber": 9098053352,
+    "emailId": "atharvagaothure@gmail.com"
+  }),
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+Sixth test case:- 400
+
+var settings = {
+  "url": "https://bfhldevapigw.healthrx.co.in/automation-campus/create/user",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "roll-number": "240345920031",
+    "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({
+    "firstName": "Atharva",
+    "lastName": " ",
+    "phoneNumber": 9098053352,
+    "emailId": "atharvagaothure@gmail.com"
+  }),
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+seventh test case :- 500 internal server error 
+
+var settings = {
+  "url": "https://bfhldevapigw.healthrx.co.in/automation-campus/create/user",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "roll-number": "240345920046",
+    "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({
+    "firstName": "Atharva",
+    "lastName": "Gaothure ",
+    "phoneNumber": 7635434229,
+    "emailId": "avichandrakargmail.com"
+  }),
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+eight test Case :-  400 {phone no. format}
+
+var settings = {
+  "url": "https://bfhldevapigw.healthrx.co.in/automation-campus/create/user",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "roll-number": "240345920046",
+    "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({
+    "firstName": "Atharva",
+    "lastName": "Gaothure ",
+    "phoneNumber": 7635434229576,
+    "emailId": "avichandrakar@gmail.com"
+  }),
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+Nine Test case:- 400 {first name has to be string }
+
+var settings = {
+  "url": "https://bfhldevapigw.healthrx.co.in/automation-campus/create/user",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "roll-number": "240345920060",
+    "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({
+    "firstName": "8755643",
+    "lastName": "chandarkar",
+    "phoneNumber": 7000118377,
+    "emailId": "Sarita10chandrakar@gmail.com"
+  }),
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+ Tenth case :- 400 
+
+var settings = {
+  "url": "https://bfhldevapigw.healthrx.co.in/automation-campus/create/user",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "roll-number": "2403459200101",
+    "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({
+    "firstName": "adhura",
+    "lastName": "handare",
+    "phoneNumber": "sejal",
+    "emailId": "9784365252@gmail.com"
+  }),
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
